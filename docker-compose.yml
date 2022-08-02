@@ -1,0 +1,22 @@
+# Project Name  : Edgework
+# Services Name : Edgework Service
+# Maintainer    : Muhamad Gofur Muzaqi
+
+version: '3'
+
+volumes:
+  edgework-data: {}
+
+services:
+  attandance_service:
+    container_name: edgework
+    image: edgework:v1
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    env_file: .env
+    restart: always
+    ports:
+      - '8000:5000'
+    volumes:
+      - .:/project/

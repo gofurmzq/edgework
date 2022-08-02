@@ -1,0 +1,7 @@
+Flask==2.1.0
+flask-restx
+Flask-Caching
+python-dotenv
+Werkzeug==2.1.2
+pandas
+gunicorn
