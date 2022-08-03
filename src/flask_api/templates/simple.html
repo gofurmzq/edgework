@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edgeworks</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='homepage.css') }}">
+</head>
+<body class="center" style="background-color:rgb(11, 129, 30);">
+    {% for table in tables %}   
+        {{titles[loop.index]}}
+        <h3>{{ table|safe }}</h3>
+    {% endfor %}
+</body>
+</html>

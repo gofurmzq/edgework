@@ -1,12 +1,11 @@
 """API endpoint definitions for /auth namespace."""
 from http import HTTPStatus
-from flask import render_template
+from flask import make_response, render_template
 from flask_restx import Namespace, Resource
 from src.flask_api.api.dataframe.business import retrieve_activity
-from IPython.display import HTML
 
+headers = {'Content-Type': 'text/html'}
 dataframe_ns = Namespace(name="dataframe", validate=True)
-
 
 @dataframe_ns.route("/alive", endpoint="alive")
 class edgeworks(Resource):
@@ -17,11 +16,11 @@ class edgeworks(Resource):
     
 @dataframe_ns.route("/dataframe", endpoint="dataframe")
 class edgeworks(Resource):
-    @dataframe_ns.response(int(HTTPStatus.OK), "Data Valid.")
-    @dataframe_ns.response(int(HTTPStatus.BAD_REQUEST), "Bad Parsing.")
+    @dataframe_ns.response(int(HTTPStatus.OK), "OK.")
     def get(self):
-        """Return Value of Inventory Activity"""
+        """return value of inventory activity"""
         path_file = "src/flask_api/models/inventory_activity.csv"
         df = retrieve_activity(path_file)
-        print(df)
+        df.to_html(classes='data')
   
+        return make_response(render_template("simple.html", tables=[df.to_html(classes='data')], titles=['Inventory Activity']),200, headers)

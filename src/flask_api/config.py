@@ -10,6 +10,7 @@ class Config:
     """Base configuration."""
     CACHE_TYPE = os.getenv("CACHE_TYPE")
     CACHE_DEFAULT_TIMEOUT = os.getenv("CACHE_DEFAULT_TIMEOUT")
+    FLASK_APP = os.getenv("FLASK_APP")
     
 class TestingConfig(Config):
     """Testing configuration."""
