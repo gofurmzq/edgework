@@ -1,7 +1,8 @@
-Flask==2.1.0
+Flask
 flask-restx
 Flask-Caching
 python-dotenv
-Werkzeug==2.1.2
+Werkzeug
 pandas
 gunicorn
+IPython

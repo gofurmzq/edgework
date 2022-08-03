@@ -2,7 +2,8 @@
 from http import HTTPStatus
 from flask import render_template
 from flask_restx import Namespace, Resource
-from flask_api.api.dataframe.business import retrieve_activity
+from src.flask_api.api.dataframe.business import retrieve_activity
+from IPython.display import HTML
 
 dataframe_ns = Namespace(name="dataframe", validate=True)
 
@@ -23,4 +24,4 @@ class edgeworks(Resource):
         path_file = "src/flask_api/models/inventory_activity.csv"
         df = retrieve_activity(path_file)
         print(df)
-        return render_template('simple.html', tables=[df.to_html(classes='data')], titles=df.columns.values)
+  

@@ -2,7 +2,7 @@
 from flask import Blueprint
 from flask_restx import Api
 
-from flask_api.api.dataframe.endpoints import dataframe_ns
+from src.flask_api.api.dataframe.endpoints import dataframe_ns
 
 api_bp = Blueprint("api", __name__, url_prefix="/api/v1")
 
