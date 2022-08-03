@@ -11,24 +11,25 @@ table.dataframe, .dataframe th, .dataframe td {
   text-align:left;
   padding: 10px;
   margin-bottom: 40px;
-  font-size: 0.9em;
+  font-size: 0.8em;
   margin-left:auto;
   margin-right:auto;
 }
 
 .data th {
-    background-color: #0a6a7a;
+    background-color: #3a676e;
     color: white;
 }
 
 tr:nth-child(odd) {
-    background-color: #0a6a7a;
+    background-color: #3a676e;
     color: white
 }
 
 tr:nth-child(even){ 
     background-color:#fff; 
-    color: #0a6a7a
+    color: #3a676e
 }
 
 tr:hover            { background-color: #ffff99;}
+

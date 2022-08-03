@@ -7,4 +7,5 @@ RUN pip install --upgrade pip setuptools wheel
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-CMD python run.py
+CMD ["flask", "run"]
+    
